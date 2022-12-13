@@ -15,15 +15,17 @@ public class StorePage extends BasePage {
     }
 
     //Method create for add text to search fld
-    public void enterTxtInSearchFld(String txt)
+    public StorePage enterTxtInSearchFld(String txt)
     {
         driver.findElement(searchFld).sendKeys(txt);
+        return this;
     }
 
     //Method to click on the search button
-    public void clickSearchBtn()
+    public StorePage clickSearchBtn()
     {
         driver.findElement(searchBtn).click();
+        return this;
     }
 
     //Method to check the title "Search results: “Blue”"

@@ -21,8 +21,9 @@ public class MyFirstTestCase  extends BaseTest {
         StorePage storePage = homePage.clickStoreMenuLink();
 
         //Call the store page methods
-        storePage.enterTxtInSearchFld("Blue");
-        storePage.clickSearchBtn();
+        storePage.
+                enterTxtInSearchFld("Blue").
+                clickSearchBtn();
         Assert.assertEquals(storePage.getTitle(), "Search results: “Blue”");
         storePage.clickAddToCartBtn();
 
