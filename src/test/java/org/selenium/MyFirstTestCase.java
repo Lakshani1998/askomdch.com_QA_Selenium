@@ -6,22 +6,20 @@ import org.selenium.pom.objects.BillingAddress;
 import org.selenium.pom.pages.CartPage;
 import org.selenium.pom.pages.HomePage;
 import org.selenium.pom.pages.StorePage;
+import org.selenium.pom.utils.JacksonUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+import java.io.InputStream;
 
 
 public class MyFirstTestCase  extends BaseTest {
 
     @Test
-    public void guestCheckoutUsingDirectBankTransfer() throws InterruptedException {
-//        BillingAddress billingAddress = new BillingAddress().
-//            setFirstName("Lakshani").
-//            setLastName("Erandika").
-//            setAddressLineOne("San Fransisco").
-//            setCity("San Fransisco").
-//                setPostCode("94123").
-//            setEmail("admin@gmail.com");
+    public void guestCheckoutUsingDirectBankTransfer() throws InterruptedException, IOException {
+
+
 
         BillingAddress billingAddress = new BillingAddress("Lakshani","Erandika","San Fransisco","San Fransisco","94123", "admin@gmail.com");
 
