@@ -2,6 +2,7 @@ package org.selenium;
 
 import org.openqa.selenium.By;
 import org.selenium.pom.base.BaseTest;
+import org.selenium.pom.objects.BillingAddress;
 import org.selenium.pom.pages.CartPage;
 import org.selenium.pom.pages.HomePage;
 import org.selenium.pom.pages.StorePage;
@@ -14,8 +15,13 @@ public class MyFirstTestCase  extends BaseTest {
 
     @Test
     public void guestCheckoutUsingDirectBankTransfer() throws InterruptedException {
-
-
+        BillingAddress billingAddress = new BillingAddress().
+            setFirstName("Lakshani").
+            setLastName("Erandika").
+            setAddressLineOne("San Fransisco").
+            setCity("San Fransisco").
+                setPostCode("94123").
+            setEmail("admin@gmail.com");
 
         //clickMenuLink and getting url
         StorePage storePage = new HomePage(driver).
@@ -34,13 +40,7 @@ public class MyFirstTestCase  extends BaseTest {
         //checkout page methods calling
         CheckoutPage checkoutPage = cartPage.clickCheckoutBtn();
 //        checkoutPage.enterBillingAddress("Lakshani","Erandika")
-        checkoutPage.
-                enterFirstName("Lakshani").
-                enterLastName("Erandika").
-                enterAddressLineOne("ABC Street").
-                enterCity("Sydni").
-                enterPostCode("90213").
-                enterEmail("admin@gmail.com").
+        checkoutPage.setBillingAddress(billingAddress).
                 placeOrder();
         Thread.sleep(5000);
         Assert.assertEquals(checkoutPage.getNotice(),"Thank you. Your order has been received.");
