@@ -15,18 +15,14 @@ public class MyFirstTestCase  extends BaseTest {
     @Test
     public void guestCheckoutUsingDirectBankTransfer() throws InterruptedException {
 
-        driver.get("https://askomdch.com/");
 
-        //clickMenuLink
-        HomePage homePage = new HomePage(driver);
 
-        StorePage storePage = new StorePage(driver);
-        homePage.clickStoreMenuLink();
+        //clickMenuLink and getting url
+        StorePage storePage = new HomePage(driver).
+                load().
+                clickStoreMenuLink().
+                search("Blue");
 
-        //Call the store page methods
-        storePage.search("Blue");
-//                enterTxtInSearchFld("Blue").
-//                clickSearchBtn();
         Assert.assertEquals(storePage.getTitle(), "Search results: “Blue”");
         storePage.clickAddToCartBtn("Blue Shoes");
         Thread.sleep(5000);

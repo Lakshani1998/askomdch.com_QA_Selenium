@@ -12,10 +12,16 @@ public class HomePage extends BasePage {
     private final By storeMenuLink = By.cssSelector("li[id='menu-item-1227'] a[class='menu-link']");
 
     //constructor with super keyword
-    public HomePage(WebDriver driver) {
+    public HomePage(WebDriver driver)
+    {
         super(driver);
     }
 
+    public HomePage load()
+    {
+        load("/");
+        return this;
+    }
 
 
     //clickStoreMenuLink method
