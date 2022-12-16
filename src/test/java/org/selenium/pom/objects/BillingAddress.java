@@ -8,6 +8,21 @@ public class BillingAddress {
     private String postCode;
     private String email;
 
+    //create a default constructor
+    public BillingAddress(){}
+
+    //create a constructor
+    public BillingAddress(String firstName, String lastName, String addressLineOne, String city, String postCode, String email)
+    {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.addressLineOne = addressLineOne;
+        this.city = city;
+        this.postCode = postCode;
+        this.email = email;
+
+    }
+
     public String getFirstName() {
         return firstName;
     }

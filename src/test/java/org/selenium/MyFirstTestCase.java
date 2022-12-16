@@ -15,13 +15,15 @@ public class MyFirstTestCase  extends BaseTest {
 
     @Test
     public void guestCheckoutUsingDirectBankTransfer() throws InterruptedException {
-        BillingAddress billingAddress = new BillingAddress().
-            setFirstName("Lakshani").
-            setLastName("Erandika").
-            setAddressLineOne("San Fransisco").
-            setCity("San Fransisco").
-                setPostCode("94123").
-            setEmail("admin@gmail.com");
+//        BillingAddress billingAddress = new BillingAddress().
+//            setFirstName("Lakshani").
+//            setLastName("Erandika").
+//            setAddressLineOne("San Fransisco").
+//            setCity("San Fransisco").
+//                setPostCode("94123").
+//            setEmail("admin@gmail.com");
+
+        BillingAddress billingAddress = new BillingAddress("Lakshani","Erandika","San Fransisco","San Fransisco","94123", "admin@gmail.com");
 
         //clickMenuLink and getting url
         StorePage storePage = new HomePage(driver).
